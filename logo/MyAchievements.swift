@@ -1,9 +1,7 @@
 //
 //  MyAchievements-5View.swift
 //  Do-nut(5-8)
-//
-//  Created by shorouq khallaf on 23/05/1444 AH.
-//
+
 
 import SwiftUI
 
@@ -30,9 +28,9 @@ struct MyAchievements: View {
                     .foregroundColor(.black)
                     .frame(maxWidth: .infinity,alignment: expandCards ? .leading : .center)
                     .overlay(alignment: .trailing){
-                        //                    close button
+                        // close button
                         Button{
-                            //                        closing cards
+                            // closing cards
                             withAnimation(.interactiveSpring(response: 0.8, dampingFraction: 0.7)){
                                 expandCards = false
                             }
@@ -48,7 +46,6 @@ struct MyAchievements: View {
                     }
                     .padding(.horizontal , 40.0)
                     .padding(.bottom,40)
-                
                 ScrollView(.vertical, showsIndicators: false){
                     VStack(spacing: 0){
                         ForEach(cards){card in
@@ -58,8 +55,7 @@ struct MyAchievements: View {
                     .overlay {
                         //to avoid scrolling
                         Rectangle()
-                            .fill(.black.opacity(expandCards ? 0 :
-                                                    0.01))
+                            .fill(.black.opacity(expandCards ? 0 : 0.01))
                             .onTapGesture {
                                 withAnimation(.easeInOut(duration: 0.35)){
                                     expandCards = true
@@ -77,7 +73,6 @@ struct MyAchievements: View {
         GeometryReader {proxy in
             let rect = proxy.frame(in: .named("SCROLL"))
             let offset = CGFloat(getIndex(Card: card)*70)
-            
             ZStack(){
                 Image("cardImage")
                     .resizable()
@@ -90,7 +85,6 @@ struct MyAchievements: View {
                             x: 0,
                             y: 2)
                     .offset(x: -169 , y:150)
-                
                 VStack(spacing: 10){
                     Text(card.con)
                         .fontWeight(.bold)
@@ -105,17 +99,13 @@ struct MyAchievements: View {
                     Text(card.mess1)
                         .fontWeight(.light)
                         .multilineTextAlignment(.center)
-                    
                 }
                 .padding(.leading, 50)
-                
             }
             //making it as a stack
             .offset(x:  45, y: expandCards ?  offset : -rect.minY + offset)
-            
         }
         .frame(height: 200)
-        
     }
 }
 // retreiving index
@@ -124,8 +114,6 @@ func getIndex(Card: Card) -> Int{
         return currentCard.id == Card.id
     } ?? 0
 }
-
-
 struct MyAchievements_Previews: PreviewProvider {
     static var previews: some View {
         MyAchievements()

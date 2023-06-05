@@ -1,9 +1,6 @@
 //
 //  logoApp.swift
 //  logo
-//
-//  Created by Rana on 19/05/1444 AH.
-//
 
 import SwiftUI
 

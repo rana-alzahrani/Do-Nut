@@ -10,16 +10,12 @@ struct Logo: View {
     @State private var isActive = false
     
     var body: some View {
-        
-        //  NavigationLink(destination: Homepage()) {
         Group {
             NavigationView {
                 if showMainView {
-                    
                     Homepage()
                 } else {
                     ZStack{
-                        
                         Color("background")
                             .edgesIgnoringSafeArea(.all)
                         Image("Image")
@@ -31,7 +27,6 @@ struct Logo: View {
                             .opacity(opacity)
                             .scaleEffect(scale)
                             .padding()
-                        
                         Text("Do-nut stop keep it up !")
                             .font(.title)
                             .foregroundColor(.orange)
@@ -42,10 +37,8 @@ struct Logo: View {
                         {
                             self.isActive = true
                         }
-                        
                     }
                 }
-                
             }.onAppear {
                 DispatchQueue.main.asyncAfter(deadline: .now()+3){
                     withAnimation(.linear(duration: 20)){
@@ -54,19 +47,14 @@ struct Logo: View {
                         opacity = 0
                         showMainView = true
                     }
-                    
                 }
             }
-            //}
-            
         }
     }
 }
-    
-    struct ContentView1_Previews: PreviewProvider {
-    
-        static var previews: some View {
-            Logo()
-        }
+struct ContentView1_Previews: PreviewProvider {
+    static var previews: some View {
+        Logo()
     }
+}
 

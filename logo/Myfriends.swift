@@ -2,8 +2,6 @@
 //  MyFriends-6View.swift
 //  Do-nut(5-8)
 //
-//  Created by shorouq khallaf on 23/05/1444 AH.
-//
 
 import SwiftUI
 
@@ -12,9 +10,7 @@ struct Myfriends: View {
     let friends = ["Nawal", "Hind", "Lina","Nawal","Lina","Ali"]
     var body: some View {
         NavigationView{
-            
             List{
-                
                 ForEach(results, id: \.self){ friend in
                     NavigationLink(destination: Text(friend)){
                         Text(friend)
@@ -28,19 +24,12 @@ struct Myfriends: View {
                         .background(Color("Color2"))
                         .cornerRadius(22)
                     .padding(5)})
-               
-                
             }
-            
             .navigationTitle("My friends")
             .searchable(text: $searchText)
-            
-                
-
             ZStack{
                 Color("backg")
                     .ignoresSafeArea()
-                
                 RoundedRectangle(cornerRadius: 0)
                     .frame(width: 393, height: 120)
                     .foregroundColor(Color.white)
@@ -52,7 +41,6 @@ struct Myfriends: View {
                     .multilineTextAlignment(.center)
                     .foregroundColor(.black)
                     .padding(.bottom, 700.0)
-      
                 Button("Start a New Challange") {
                     /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
                 }
@@ -62,7 +50,6 @@ struct Myfriends: View {
                 .cornerRadius(22)
                 .padding(.top, 550.0)
             }
-           
         }
     }
     var results: [String]{
