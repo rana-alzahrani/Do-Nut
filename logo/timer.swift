@@ -1,5 +1,5 @@
 
-//
+
 //  timer.swift
 //  dountFinal
 
@@ -48,7 +48,7 @@ struct Home : View {
                                 .frame(width: 50,height: 50)
                                 .offset(y:-20)
                                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-                                .rotationEffect(Angle(degrees: 360 * Double(self.to)))                                            )
+                                .rotationEffect(Angle(degrees: 360 * Double(self.to))))
                     VStack{
                         Text("\(convertSecondsToTime(timerInSeconds:count))")
                             .font(.system(size: 65))
