@@ -52,6 +52,7 @@ struct Logo: View {
         }
     }
 }
+
 struct ContentView1_Previews: PreviewProvider {
     static var previews: some View {
         Logo()
